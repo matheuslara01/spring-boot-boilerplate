@@ -52,6 +52,11 @@ public class User implements UserDetails {
         dataInclusao = LocalDateTime.now();
     }
 
+    public User(Long id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

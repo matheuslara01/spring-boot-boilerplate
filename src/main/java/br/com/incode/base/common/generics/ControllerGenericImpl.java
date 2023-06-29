@@ -3,9 +3,7 @@ package br.com.incode.base.common.generics;
 import java.io.Serializable;
 import java.util.List;
 
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,9 +24,6 @@ public abstract class ControllerGenericImpl<T, ID extends Serializable> {
     @Autowired
     private BaseRepositoryImpl<T, ID> genericService;
 
-    @Autowired
-    private Logger logger;
-
     @GetMapping("/findAll")
     @SecurityRequirement(name = "bearerAuth")
     @Operation(summary = "Obter todos os registros")
@@ -42,9 +37,8 @@ public abstract class ControllerGenericImpl<T, ID extends Serializable> {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = Response.class)) }),
             @ApiResponse(responseCode = "504", description = "Timeout", content = {
                     @Content(mediaType = "application/json", schema = @Schema(implementation = Response.class)) }), })
-    public ResponseEntity<List<T>> findAll() {
-        logger.info("entrei");
-        return ResponseEntity.ok().body(genericService.findAll());
+    public List<T> findAll() {
+        return genericService.findAll();
     }
 
     @GetMapping("/findById/{id}")
