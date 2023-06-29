@@ -3,7 +3,7 @@ package br.com.incode.base.repositories;
 import java.util.Optional;
 
 import br.com.incode.base.common.generics.BaseRepository;
-import br.com.incode.base.models.User;
+import br.com.incode.base.models.entities.User;
 
 public interface UserRepository extends BaseRepository<User, Long> {
 

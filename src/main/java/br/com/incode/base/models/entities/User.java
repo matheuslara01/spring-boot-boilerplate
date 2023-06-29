@@ -1,4 +1,4 @@
-package br.com.incode.base.models;
+package br.com.incode.base.models.entities;
 
 import java.time.LocalDateTime;
 import java.util.Collection;

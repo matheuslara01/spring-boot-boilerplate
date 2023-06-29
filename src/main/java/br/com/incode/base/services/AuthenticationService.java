@@ -11,9 +11,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.incode.base.models.LoginForm;
-import br.com.incode.base.models.User;
+import br.com.incode.base.models.dto.LoginForm;
 import br.com.incode.base.models.dto.TokenDTO;
+import br.com.incode.base.models.entities.User;
 import br.com.incode.base.repositories.UserRepository;
 
 @Service

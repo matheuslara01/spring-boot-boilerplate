@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.incode.base.common.exceptions.ExceptionHandlerGeneric;
-import br.com.incode.base.models.LoginForm;
+import br.com.incode.base.models.dto.LoginForm;
 import br.com.incode.base.models.dto.TokenDTO;
 import br.com.incode.base.services.AuthenticationService;
 

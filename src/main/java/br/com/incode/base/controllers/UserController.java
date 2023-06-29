@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.incode.base.common.generics.ControllerGenericImpl;
-import br.com.incode.base.models.User;
+import br.com.incode.base.models.entities.User;
 
 
 @RestController

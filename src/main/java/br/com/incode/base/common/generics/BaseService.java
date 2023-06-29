@@ -7,7 +7,7 @@ import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.domain.Specification;
 
-import br.com.incode.base.models.Response;
+import br.com.incode.base.models.dto.Response;
 
 public interface BaseService<T, ID extends Serializable> {
 
@@ -36,8 +36,6 @@ public interface BaseService<T, ID extends Serializable> {
     public abstract Page<T> findAll(Integer page);
 
     public abstract Optional<T> findByIdOptional(ID entityId);
-
-    // public abstract D findByIdTeste(ID entityId, Class<D> dtoClass);
 
     public abstract T findById(ID entityId);
 

@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.incode.base.models.LoginForm;
-import br.com.incode.base.models.Response;
+import br.com.incode.base.models.dto.LoginForm;
+import br.com.incode.base.models.dto.Response;
 import br.com.incode.base.models.dto.TokenDTO;
 import br.com.incode.base.services.AuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;

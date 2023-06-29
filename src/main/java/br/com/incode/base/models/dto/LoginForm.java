@@ -1,4 +1,4 @@
-package br.com.incode.base.models;
+package br.com.incode.base.models.dto;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
