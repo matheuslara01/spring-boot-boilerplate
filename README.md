@@ -1,6 +1,6 @@
 # Spring Boot Boilerplate - JWT Authentication, MySQL, Swagger, JUnit
 
-Este projeto é um boilerplate (modelo inicial) em Spring Boot que inclui configurações básicas para autenticação com JWT (JSON Web Token), integração com banco de dados MySQL, documentação de API com Swagger, testes unitários com JUnit, cadastro básico de usuário, tratamento de exceções através do Exception Handler e logs utilizando o SLF4J.
+Este projeto é um boilerplate (modelo inicial) em Spring Boot para REST APIs que inclui configurações básicas para autenticação com JWT (JSON Web Token), integração com banco de dados MySQL, documentação de API com Swagger, testes unitários com JUnit, cadastro básico de usuário, tratamento de exceções através do Exception Handler e logs utilizando o SLF4J.
 
 ![Spring Boot](https://img.icons8.com/color/48/000000/spring-logo.png)
 ![JWT](https://img.icons8.com/color/48/java-web-token.png)
