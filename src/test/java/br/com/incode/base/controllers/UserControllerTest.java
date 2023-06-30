@@ -17,7 +17,7 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import br.com.incode.base.common.generics.BaseRepositoryImpl;
-import br.com.incode.base.models.dto.Response;
+import br.com.incode.base.common.generics.Response;
 import br.com.incode.base.models.entities.User;
 
 @ExtendWith(MockitoExtension.class)

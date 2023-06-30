@@ -14,7 +14,6 @@ import org.springframework.data.jpa.domain.Specification;
 
 import br.com.incode.base.common.exceptions.EntityDeleteException;
 import br.com.incode.base.common.exceptions.EntityPersistenceException;
-import br.com.incode.base.models.dto.Response;
 
 public abstract class BaseRepositoryImpl<T, ID extends Serializable> implements BaseService<T, ID> {
 

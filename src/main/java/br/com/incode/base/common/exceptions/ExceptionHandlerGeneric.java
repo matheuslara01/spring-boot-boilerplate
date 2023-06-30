@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import br.com.incode.base.models.dto.Response;
+import br.com.incode.base.common.generics.Response;
 import io.jsonwebtoken.MalformedJwtException;
 
 @ControllerAdvice

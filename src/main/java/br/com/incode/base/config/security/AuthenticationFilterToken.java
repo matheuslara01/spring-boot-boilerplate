@@ -15,7 +15,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.incode.base.common.exceptions.InvalidTokenException;
-import br.com.incode.base.models.dto.Response;
+import br.com.incode.base.common.generics.Response;
 import br.com.incode.base.models.entities.User;
 import br.com.incode.base.repositories.UserRepository;
 import br.com.incode.base.services.TokenService;

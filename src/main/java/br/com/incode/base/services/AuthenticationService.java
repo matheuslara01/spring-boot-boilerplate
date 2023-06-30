@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.incode.base.models.dto.LoginForm;
+import br.com.incode.base.models.dto.LoginDTO;
 import br.com.incode.base.models.dto.TokenDTO;
 import br.com.incode.base.models.entities.User;
 import br.com.incode.base.repositories.UserRepository;
@@ -40,7 +40,7 @@ public class AuthenticationService implements UserDetailsService {
     }
     
 
-    public TokenDTO login(LoginForm form) throws AuthenticationException {
+    public TokenDTO login(LoginDTO form) throws AuthenticationException {
 		Authentication dadosLogin = form.converter();
 
 		try {

@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.incode.base.common.exceptions.ExceptionHandlerGeneric;
-import br.com.incode.base.models.dto.LoginForm;
+import br.com.incode.base.models.dto.LoginDTO;
 import br.com.incode.base.models.dto.TokenDTO;
 import br.com.incode.base.services.AuthenticationService;
 
@@ -28,8 +28,8 @@ public class AuthControllerTest {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
     private TokenDTO tokenDTO;
-    private LoginForm validLoginForm;
-    private LoginForm invalidLoginForm;
+    private LoginDTO validLoginForm;
+    private LoginDTO invalidLoginForm;
 
     @Mock
     private AuthenticationService authenticationService;
@@ -40,8 +40,8 @@ public class AuthControllerTest {
     @BeforeEach
     public void setup() {
         tokenDTO = new TokenDTO("token", "Bearer");
-        validLoginForm = new LoginForm("testUser", "testPassword");
-        invalidLoginForm = new LoginForm("invalidUser", "invalidPassword");
+        validLoginForm = new LoginDTO("testUser", "testPassword");
+        invalidLoginForm = new LoginDTO("invalidUser", "invalidPassword");
     }
 
     @Test

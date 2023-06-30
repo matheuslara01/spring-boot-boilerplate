@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.incode.base.models.dto.LoginForm;
-import br.com.incode.base.models.dto.Response;
+import br.com.incode.base.common.generics.Response;
+import br.com.incode.base.models.dto.LoginDTO;
 import br.com.incode.base.models.dto.TokenDTO;
 import br.com.incode.base.services.AuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -36,7 +36,7 @@ public class AuthController {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = Response.class)) }),
 			@ApiResponse(responseCode = "504", description = "Timeout", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = Exception.class)) }), })
-	public TokenDTO authenticator(@RequestBody LoginForm form) {
+	public TokenDTO authenticator(@RequestBody LoginDTO form) {
 		return authenticationService.login(form);
 	}
 

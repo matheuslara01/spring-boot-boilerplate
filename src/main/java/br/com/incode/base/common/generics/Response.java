@@ -1,4 +1,4 @@
-package br.com.incode.base.models.dto;
+package br.com.incode.base.common.generics;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
