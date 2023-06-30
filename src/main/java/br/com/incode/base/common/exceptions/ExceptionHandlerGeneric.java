@@ -4,6 +4,8 @@ import javax.persistence.NoResultException;
 
 import org.hibernate.id.IdentifierGenerationException;
 import org.modelmapper.MappingException;
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,9 @@ import io.jsonwebtoken.MalformedJwtException;
 
 @ControllerAdvice
 public class ExceptionHandlerGeneric extends ResponseEntityExceptionHandler {
+
+	@Autowired
+	private Logger logger;
 
 	@ExceptionHandler(DataIntegrityViolationException.class)
 	public ResponseEntity<?> handleDataIntegrityViolationException(RuntimeException ex, WebRequest request) {
@@ -89,8 +94,7 @@ public class ExceptionHandlerGeneric extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleGenericException(Exception ex, WebRequest request) {
-		ex.printStackTrace();
-
+		logger.error(ex.getMessage(), ex.getCause());
 		return new ResponseEntity<>(
 				new Response(false, "Erro interno no servidor. Contate o administrador do sistema."),
 				HttpStatus.INTERNAL_SERVER_ERROR);
