@@ -2,73 +2,73 @@
 
 https://medium.com/@mateus.delara65/spring-boot-boilerplate-jwt-authentication-mysql-swagger-junit-56bd75bef708
 
-Este projeto é um boilerplate (modelo inicial) em Spring Boot para REST APIs que inclui configurações básicas para autenticação com JWT (JSON Web Token), integração com banco de dados MySQL, documentação de API com Swagger, testes unitários com JUnit, cadastro básico de usuário, tratamento de exceções através do Exception Handler e logs utilizando o SLF4J.
+This project is a boilerplate (initial model) in Spring Boot for REST APIs that includes basic configurations for authentication with JWT (JSON Web Token), integration with MySQL database, API documentation with Swagger, unit tests with JUnit, basic registration of user, exception handling through the Exception Handler and logs using SLF4J.
 
 ![Spring Boot](https://img.icons8.com/color/48/000000/spring-logo.png)
 ![JWT](https://img.icons8.com/color/48/java-web-token.png)
 ![MySQL](https://img.icons8.com/color/48/mysql-logo.png)
 ![Swagger](https://img.icons8.com/color/48/cloud-function.png) 
 
-## Pré-requisitos
+## Requisites
 
-Antes de executar o projeto, certifique-se de ter o seguinte instalado:
+Before running the project, make sure you have the following installed:
 
-- Java Development Kit (JDK) 8 ou superior
+- Java Development Kit (JDK) 8 or higher
 - Maven
 - MySQL Server
 
-## Configuração
+## Settings
 
-1. Clone este repositório em sua máquina local:
+1. Clone this repository on your local machine:
 - ``git clone 'https://github.com/matheuslara01/spring-boot-boilerplate.git'``
 
-2. Navegue até o diretório do projeto:
+2. Navigate to the project directory:
 - ``cd spring-boot-boilerplate``
 
-3. Crie um banco de dados no MySQL para o projeto.
+3. Create a MySQL database for the project.
 
-4. No arquivo `application.properties` (localizado em `src/main/resources`), atualize as seguintes propriedades de acordo com sua configuração do MySQL:
-- ``spring.datasource.url=jdbc:mysql://localhost:3306/nome_do_banco_de_dados``
-- ``spring.datasource.username=seu_usuario``
-- ``spring.datasource.password=sua_senha``
+4. In the `application.properties` file (located in `src/main/resources`), update the following properties according to your MySQL configuration:
+- ``spring.datasource.url=jdbc:mysql://localhost:3306/name_db``
+- ``spring.datasource.username=your_username``
+- ``spring.datasource.password=your_password``
 
-5. Execute o seguinte comando para compilar e executar o projeto:
+5. Run the following command to build and run the project:
 - ``mvn spring-boot:run``
 
-## Uso
+## Use
 
-Após iniciar o projeto, você pode acessar a documentação da API usando o Swagger:
+After starting the project, you can access the API documentation using Swagger:
 
 ``http://localhost:8080/base/swagger-ui/index.html``
 
-Para autenticar e acessar as rotas protegidas, você precisará gerar um token JWT de autenticação. Para isso, faça uma solicitação POST para o endpoint `/base/auth` com as credenciais de usuário e senha. O token JWT será retornado na resposta. Em seguida, inclua o token JWT nas solicitações subsequentes no cabeçalho `Authorization`.
+To authenticate and access the protected routes, you will need to generate an authentication JWT token. To do this, make a POST request to the `/base/auth` endpoint with the username and password credentials. The JWT token will be returned in the response. Then include the JWT token in subsequent requests in the `Authorization` header.
 
-## Cadastro de Usuário
+## User registration
 
-O projeto inclui um cadastro básico de usuário com as operações de criação, leitura, atualização e exclusão (CRUD). O endpoint para as operações de usuário é `/base/user`.
+The project includes a basic user registry with creation, reading, updating and deleting (CRUD) operations. The endpoint for user operations is `/base/user`.
 
-## Testes
+## Tests
 
-O projeto inclui testes unitários utilizando JUnit. Para executar os testes, execute o seguinte comando:
+The project includes unit testing using JUnit. To run the tests, run the following command:
 
 - ``mvn test``
 
-Os testes são executados e os resultados serão exibidos no console.
+The tests are run and the results will be displayed on the console.
 
-## Tratamento de Exceções
+## Exception Handling
 
-O projeto possui um Exception Handler para tratar exceções de forma centralizada. Isso permite retornar respostas padronizadas e adequadas em caso de erros ou exceções ocorrerem durante a execução da API.
+The project has an Exception Handler to handle exceptions centrally. This allows you to return standardized and appropriate responses in case errors or exceptions occur during the execution of the API.
 
 ## Logs
 
-O projeto utiliza o SLF4J para logs. Os logs são registrados e podem ser configurados de acordo com as necessidades do projeto.
+The project uses SLF4J for logging. Logs are logged and can be configured according to project needs.
 
-## Contribuição
+## Contribution
 
-Sinta-se à vontade para contribuir com melhorias para este projeto. Fique à vontade para abrir problemas (issues) ou enviar pull requests com suas sugestões.
+Feel free to contribute improvements to this project. Feel free to open issues (issues) or submit pull requests with your suggestions.
 
 ---
 
-## Licença
+## License
 
-Este projeto está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
