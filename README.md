@@ -9,7 +9,7 @@ This project is a boilerplate (initial model) in Spring Boot for REST APIs that 
 ![MySQL](https://img.icons8.com/color/48/mysql-logo.png)
 ![Swagger](https://img.icons8.com/color/48/cloud-function.png) 
 
-## Requisites
+## Prerequisites
 
 Before running the project, make sure you have the following installed:
 
