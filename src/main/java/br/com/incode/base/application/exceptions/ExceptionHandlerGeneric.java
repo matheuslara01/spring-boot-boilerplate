@@ -49,7 +49,7 @@ public class ExceptionHandlerGeneric extends ResponseEntityExceptionHandler {
 	public ResponseEntity<?> noResultExceptionException(RuntimeException ex, WebRequest request) {
 		return new ResponseEntity<>(
 				new ResponseDTO(false, ex.getMessage()),
-				HttpStatus.NO_CONTENT);
+				HttpStatus.NOT_FOUND);
 	}
 
 	@ExceptionHandler(MappingException.class)
