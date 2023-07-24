@@ -2,7 +2,7 @@
 
 https://medium.com/@mateus.delara65/spring-boot-boilerplate-jwt-authentication-mysql-swagger-junit-56bd75bef708
 
-This project is a boilerplate (initial model) in Spring Boot for REST APIs that includes basic configurations for authentication with JWT (JSON Web Token), integration with MySQL database, API documentation with Swagger, unit tests with JUnit, basic registration of user, exception handling through the Exception Handler and logs using SLF4J.
+This project is a Spring Boot boilerplate for building RESTful APIs. It follows the Clean Architecture principles, with a clear separation of concerns into three layers: Application, Domain, and Infrastructure. The boilerplate includes essential configurations for JWT (JSON Web Token) authentication, MySQL database integration, API documentation with Swagger, unit tests with JUnit, user registration functionality, centralized exception handling, and logging using SLF4J.
 
 ![Spring Boot](https://img.icons8.com/color/48/000000/spring-logo.png)
 ![JWT](https://img.icons8.com/color/48/java-web-token.png)
@@ -17,7 +17,7 @@ Before running the project, make sure you have the following installed:
 - Maven
 - MySQL Server
 
-## Settings
+## Getting Started
 
 1. Clone this repository on your local machine:
 - ``git clone 'https://github.com/matheuslara01/spring-boot-boilerplate.git'``
@@ -35,7 +35,7 @@ Before running the project, make sure you have the following installed:
 5. Run the following command to build and run the project:
 - ``mvn spring-boot:run``
 
-## Use
+## How to Use
 
 After starting the project, you can access the API documentation using Swagger:
 
