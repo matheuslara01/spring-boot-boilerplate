@@ -38,7 +38,7 @@ public class ExceptionHandlerGeneric extends ResponseEntityExceptionHandler {
 	}
 
 	@ExceptionHandler(IdentifierGenerationException.class)
-	public ResponseEntity<?> identifierGenerationException(RuntimeException ex, WebRequest request) {
+	public ResponseEntity<?> handleIdentifierGenerationException(RuntimeException ex, WebRequest request) {
 		return new ResponseEntity<>(
 				new ResponseDTO(false, "Sequência de ID não configurado, contate o administrador do sistema: "
 						+ ex.getMessage().split(":")[1].split(";")[0]),
@@ -46,14 +46,14 @@ public class ExceptionHandlerGeneric extends ResponseEntityExceptionHandler {
 	}
 
 	@ExceptionHandler(NoResultException.class)
-	public ResponseEntity<?> noResultExceptionException(RuntimeException ex, WebRequest request) {
+	public ResponseEntity<?> handleNoResultExceptionException(RuntimeException ex, WebRequest request) {
 		return new ResponseEntity<>(
 				new ResponseDTO(false, ex.getMessage()),
 				HttpStatus.NOT_FOUND);
 	}
 
 	@ExceptionHandler(MappingException.class)
-	public ResponseEntity<?> mappingException(RuntimeException ex, WebRequest request) {
+	public ResponseEntity<?> handleMappingException(RuntimeException ex, WebRequest request) {
 
 		if (ex.getMessage().contains("DATE")) {
 			return new ResponseEntity<>(
@@ -88,7 +88,7 @@ public class ExceptionHandlerGeneric extends ResponseEntityExceptionHandler {
 	}
 
 	@ExceptionHandler(BadCredentialsException.class)
-	protected ResponseEntity<?> badCredentialsException(BadCredentialsException ex, WebRequest request) {
+	protected ResponseEntity<?> handleBadCredentialsException(BadCredentialsException ex, WebRequest request) {
 		return new ResponseEntity<>(new ResponseDTO(false, "Login ou senha inválidos!"), HttpStatus.BAD_REQUEST);
 	}
 
