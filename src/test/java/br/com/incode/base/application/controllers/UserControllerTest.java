@@ -16,7 +16,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import br.com.incode.base.application.controllers.UserController;
 import br.com.incode.base.application.dto.ResponseDTO;
 import br.com.incode.base.infrastructure.persistence.entities.User;
 import br.com.incode.base.infrastructure.util.BaseRepositoryImpl;

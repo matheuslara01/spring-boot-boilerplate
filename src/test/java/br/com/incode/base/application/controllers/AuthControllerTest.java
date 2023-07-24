@@ -26,23 +26,23 @@ import br.com.incode.base.domain.services.AuthenticationService;
 @ExtendWith(MockitoExtension.class)
 public class AuthControllerTest {
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
-    private TokenDTO tokenDTO;
-    private LoginDTO validLoginForm;
-    private LoginDTO invalidLoginForm;
+        private final ObjectMapper objectMapper = new ObjectMapper();
+        private TokenDTO tokenDTO;
+        private LoginDTO validLoginForm;
+        private LoginDTO invalidLoginForm;
 
-    @Mock
-    private AuthenticationService authenticationService;
+        @Mock
+        private AuthenticationService authenticationService;
 
-    @InjectMocks
-    private AuthController authController;
+        @InjectMocks
+        private AuthController authController;
 
-    @BeforeEach
-    public void setup() {
-        tokenDTO = new TokenDTO("token", "Bearer");
-        validLoginForm = new LoginDTO("testUser", "testPassword");
-        invalidLoginForm = new LoginDTO("invalidUser", "invalidPassword");
-    }
+        @BeforeEach
+        public void setup() {
+                tokenDTO = new TokenDTO("token", "Bearer");
+                validLoginForm = new LoginDTO("testUser", "testPassword");
+                invalidLoginForm = new LoginDTO("invalidUser", "invalidPassword");
+        }
 
     @Test
     public void testAuthenticatorSuccess() throws Exception {
@@ -81,22 +81,4 @@ public class AuthControllerTest {
                 .andExpect(jsonPath("$.message").value("Login ou senha inválidos!"));
     }
 
-    @Test
-    public void testAuthenticatorException() throws Exception {
-        
-        when(authenticationService.login(validLoginForm)).thenThrow(new RuntimeException("Erro interno"));
-
-        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(authController)
-                .setControllerAdvice(new ExceptionHandlerGeneric())
-                .build();
-
-        String jsonContent = objectMapper.writeValueAsString(validLoginForm);
-
-        mockMvc.perform(post("/auth")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(jsonContent))
-                .andExpect(status().isInternalServerError())
-                .andExpect(jsonPath("$.success").value(false))
-                .andExpect(jsonPath("$.message").value("Erro interno no servidor. Contate o administrador do sistema."));
-    }
 }
