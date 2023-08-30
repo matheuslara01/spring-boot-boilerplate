@@ -26,25 +26,25 @@ import br.com.incode.base.domain.services.AuthenticationService;
 @ExtendWith(MockitoExtension.class)
 public class AuthControllerTest {
 
-        private final ObjectMapper objectMapper = new ObjectMapper();
-        private TokenDTO tokenDTO;
-        private LoginDTO validLoginForm;
-        private LoginDTO invalidLoginForm;
+	private final ObjectMapper objectMapper = new ObjectMapper();
+	private TokenDTO tokenDTO;
+	private LoginDTO validLoginForm;
+	private LoginDTO invalidLoginForm;
 
-        @Mock
-        private AuthenticationService authenticationService;
+	@Mock
+	private AuthenticationService authenticationService;
 
-        @InjectMocks
-        private AuthController authController;
+	@InjectMocks
+	private AuthController authController;
 
-        @BeforeEach
-        public void setup() {
-                tokenDTO = new TokenDTO("token", "Bearer");
-                validLoginForm = new LoginDTO("testUser", "testPassword");
-                invalidLoginForm = new LoginDTO("invalidUser", "invalidPassword");
-        }
+	@BeforeEach
+	public void setup() {
+		tokenDTO = new TokenDTO("token", "Bearer");
+		validLoginForm = new LoginDTO("testUser", "testPassword");
+		invalidLoginForm = new LoginDTO("invalidUser", "invalidPassword");
+	}
 
-    @Test
+	@Test
     public void testAuthenticatorSuccess() throws Exception {
 
         when(authenticationService.login(validLoginForm)).thenReturn(tokenDTO);
@@ -61,7 +61,7 @@ public class AuthControllerTest {
                 .andExpect(jsonPath("$.tipo").value("Bearer"));
     }
 
-    @Test
+	@Test
     public void testAuthenticatorInvalidCredentials() throws Exception {
 
         when(authenticationService.login(invalidLoginForm))
