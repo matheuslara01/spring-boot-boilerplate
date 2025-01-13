@@ -4,18 +4,18 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.NoResultException;
-
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Repository;
 
-import br.com.incode.base.application.dto.ResponseDTO;
-import br.com.incode.base.application.exceptions.EntityDeleteException;
-import br.com.incode.base.application.exceptions.EntityPersistenceException;
+import br.com.incode.base.infrastructure.exceptions.EntityDeleteException;
+import br.com.incode.base.infrastructure.exceptions.EntityPersistenceException;
+import br.com.incode.base.infrastructure.exceptions.ResourceNotFoundException;
 
+@Repository
 public abstract class BaseRepositoryImpl<T, ID extends Serializable> implements BaseService<T, ID> {
 
     @Autowired
@@ -125,7 +125,7 @@ public abstract class BaseRepositoryImpl<T, ID extends Serializable> implements 
 
     @Override
     public T findById(ID entityId) {
-        return baseRepository.findById(entityId).orElseThrow(() -> new NoResultException("Recurso não encontrado!"));
+        return baseRepository.findById(entityId).orElseThrow(() -> new ResourceNotFoundException("Recurso não encontrado!"));
     }
 
     @Override

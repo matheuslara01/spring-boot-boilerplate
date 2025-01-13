@@ -7,8 +7,6 @@ import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.domain.Specification;
 
-import br.com.incode.base.application.dto.ResponseDTO;
-
 public interface BaseService<T, ID extends Serializable> {
 
     public abstract boolean save(T entity);

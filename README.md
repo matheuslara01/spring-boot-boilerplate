@@ -6,16 +6,16 @@ This project is a Spring Boot boilerplate for building RESTful APIs. It follows 
 
 ![Spring Boot](https://img.icons8.com/color/48/000000/spring-logo.png)
 ![JWT](https://img.icons8.com/color/48/java-web-token.png)
-![MySQL](https://img.icons8.com/color/48/mysql-logo.png)
+![Docker](https://img.icons8.com/color/48/docker.png)
 ![Swagger](https://img.icons8.com/color/48/cloud-function.png) 
 
 ## Prerequisites
 
 Before running the project, make sure you have the following installed:
 
-- Java Development Kit (JDK) 8 or higher
+- Java Development Kit (JDK) 21 or higher
 - Maven
-- MySQL Server
+- Docker
 
 ## Getting Started
 
@@ -25,12 +25,11 @@ Before running the project, make sure you have the following installed:
 2. Navigate to the project directory:
 - ``cd spring-boot-boilerplate``
 
-3. Create a MySQL database for the project.
+3. Create a PostgreSQL database for the project. To start PostgreSQL, simply run the following command:
 
-4. In the `application.properties` file (located in `src/main/resources`), update the following properties according to your MySQL configuration:
-- ``spring.datasource.url=jdbc:mysql://localhost:3306/name_db``
-- ``spring.datasource.username=your_username``
-- ``spring.datasource.password=your_password``
+``` bash
+   docker-compose up -d
+```
 
 5. Run the following command to build and run the project:
 - ``mvn spring-boot:run``
